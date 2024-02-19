@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'icon_content.dart';
 
 const Color BottomBarColor = Color(0xFFEB1555);
 const Color CardBG = Color(0xFF1D1E39);
@@ -92,28 +93,6 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class Gender extends StatelessWidget {
-  final IconData icon;
-  final String text;
-  Gender({required this.icon, required this.text});
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Icon(
-          icon,
-          size: 80,
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Text(text),
-      ],
     );
   }
 }
