@@ -6,17 +6,8 @@ import 'reusable_card.dart';
 const Color BottomBarColor = Color(0xFFEB1555);
 const Color ActiveCardBG = Color(0xFF1D1E39);
 const Color InactiveCardBG = Color(0xFF0A0E32);
-Color maleSelected = InactiveCardBG;
-Color femaleSelected = InactiveCardBG;
-void selectedCard(int gender) {
-  if (gender == 1) {
-    maleSelected = ActiveCardBG;
-    femaleSelected = InactiveCardBG;
-  } else {
-    femaleSelected = ActiveCardBG;
-    maleSelected = InactiveCardBG;
-  }
-}
+
+enum GenderTypes { male, female }
 
 int Height = 150;
 
@@ -28,6 +19,18 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Color maleSelected = InactiveCardBG;
+  Color femaleSelected = InactiveCardBG;
+  void selectedCard(GenderTypes gender) {
+    if (gender == GenderTypes.male) {
+      maleSelected = ActiveCardBG;
+      femaleSelected = InactiveCardBG;
+    } else {
+      femaleSelected = ActiveCardBG;
+      maleSelected = InactiveCardBG;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +49,7 @@ class _InputPageState extends State<InputPage> {
                     onTap: () {
                       setState(() {
                         // male selected
-                        selectedCard(1);
+                        selectedCard(GenderTypes.male);
                       });
                     },
                     child: MyCard(
@@ -63,7 +66,7 @@ class _InputPageState extends State<InputPage> {
                     onTap: () {
                       setState(() {
                         // female selected
-                        selectedCard(2);
+                        selectedCard(GenderTypes.female);
                       });
                     },
                     child: MyCard(
