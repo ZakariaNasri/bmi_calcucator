@@ -4,7 +4,20 @@ import 'icon_content.dart';
 import 'reusable_card.dart';
 
 const Color BottomBarColor = Color(0xFFEB1555);
-const Color CardBG = Color(0xFF1D1E39);
+const Color ActiveCardBG = Color(0xFF1D1E39);
+const Color InactiveCardBG = Color(0xFF0A0E32);
+Color maleSelected = InactiveCardBG;
+Color femaleSelected = InactiveCardBG;
+void selectedCard(int gender) {
+  if (gender == 1) {
+    maleSelected = ActiveCardBG;
+    femaleSelected = InactiveCardBG;
+  } else {
+    femaleSelected = ActiveCardBG;
+    maleSelected = InactiveCardBG;
+  }
+}
+
 int Height = 150;
 
 class InputPage extends StatefulWidget {
@@ -29,20 +42,36 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: MyCard(
-                    bgColor: CardBG,
-                    childWidget: Gender(
-                      icon: FontAwesomeIcons.mars,
-                      text: 'Male',
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        // male selected
+                        selectedCard(1);
+                      });
+                    },
+                    child: MyCard(
+                      bgColor: maleSelected,
+                      childWidget: Gender(
+                        icon: FontAwesomeIcons.mars,
+                        text: 'Male',
+                      ),
                     ),
                   ),
                 ),
                 Expanded(
-                  child: MyCard(
-                    bgColor: CardBG,
-                    childWidget: Gender(
-                      icon: FontAwesomeIcons.venus,
-                      text: 'Female',
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        // female selected
+                        selectedCard(2);
+                      });
+                    },
+                    child: MyCard(
+                      bgColor: femaleSelected,
+                      childWidget: Gender(
+                        icon: FontAwesomeIcons.venus,
+                        text: 'Female',
+                      ),
                     ),
                   ),
                 ),
@@ -51,7 +80,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: MyCard(
-              bgColor: CardBG,
+              bgColor: ActiveCardBG,
               childWidget: Column(
                 children: [
                   Text(
@@ -70,23 +99,28 @@ class _InputPageState extends State<InputPage> {
                       );
                     },
                   )
-                  // Slider(value: value, onChanged: onClick)
                 ],
               ),
             ),
           ),
-          // Expanded(
-          //   child: Row(
-          //     children: [
-          //       Expanded(
-          //         child: MyCard(bgColor: CardBG),
-          //       ),
-          //       Expanded(
-          //         child: MyCard(bgColor: CardBG),
-          //       ),
-          //     ],
-          //   ),
-          // ),
+          Expanded(
+            child: Row(
+              children: [
+                Expanded(
+                  child: MyCard(
+                    bgColor: ActiveCardBG,
+                    childWidget: Text('hh'),
+                  ),
+                ),
+                Expanded(
+                  child: MyCard(
+                    bgColor: ActiveCardBG,
+                    childWidget: Text('hh'),
+                  ),
+                ),
+              ],
+            ),
+          ),
           Container(
             height: 80,
             width: double.infinity,
