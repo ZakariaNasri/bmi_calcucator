@@ -57,7 +57,7 @@ class _InputPageState extends State<InputPage> {
                         selectedGender = GenderTypes.female;
                       });
                     },
-                    bgColor: selectedGender == GenderTypes.male
+                    bgColor: selectedGender == GenderTypes.female
                         ? ActiveCardBG
                         : InactiveCardBG,
                     childWidget: Gender(
