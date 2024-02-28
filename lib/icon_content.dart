@@ -15,6 +15,7 @@ class Gender extends StatelessWidget {
           size: 80,
         ),
         SizedBox(
+          // this is a height
           height: 20,
         ),
         Text(
