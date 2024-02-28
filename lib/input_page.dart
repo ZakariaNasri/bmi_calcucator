@@ -19,17 +19,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleSelected = InactiveCardBG;
-  Color femaleSelected = InactiveCardBG;
-  void selectedCard(GenderTypes gender) {
-    if (gender == GenderTypes.male) {
-      maleSelected = ActiveCardBG;
-      femaleSelected = InactiveCardBG;
-    } else {
-      femaleSelected = ActiveCardBG;
-      maleSelected = InactiveCardBG;
-    }
-  }
+  GenderTypes selectedGender = GenderTypes.male;
 
   @override
   Widget build(BuildContext context) {
@@ -48,10 +38,12 @@ class _InputPageState extends State<InputPage> {
                   child: MyCard(
                     onPress: () {
                       setState(() {
-                        selectedCard(GenderTypes.male);
+                        selectedGender = GenderTypes.male;
                       });
                     },
-                    bgColor: maleSelected,
+                    bgColor: selectedGender == GenderTypes.male
+                        ? ActiveCardBG
+                        : InactiveCardBG,
                     childWidget: Gender(
                       icon: FontAwesomeIcons.mars,
                       text: 'Male',
@@ -62,10 +54,12 @@ class _InputPageState extends State<InputPage> {
                   child: MyCard(
                     onPress: () {
                       setState(() {
-                        selectedCard(GenderTypes.female);
+                        selectedGender = GenderTypes.female;
                       });
                     },
-                    bgColor: femaleSelected,
+                    bgColor: selectedGender == GenderTypes.male
+                        ? ActiveCardBG
+                        : InactiveCardBG,
                     childWidget: Gender(
                       icon: FontAwesomeIcons.venus,
                       text: 'Female',
