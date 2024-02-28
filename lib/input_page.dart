@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reusable_card.dart';
-
-const Color BottomBarColor = Color(0xFFEB1555);
-const Color ActiveCardBG = Color(0xFF1D1E39);
-const Color InactiveCardBG = Color(0xFF0A0E32);
+import 'constants.dart';
 
 enum GenderTypes { male, female }
 
