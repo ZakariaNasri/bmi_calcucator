@@ -6,7 +6,7 @@ import 'constants.dart';
 
 enum GenderTypes { male, female }
 
-int Height = 150;
+int height = 150;
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -39,11 +39,11 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     bgColor: selectedGender == GenderTypes.male
-                        ? ActiveCardBG
-                        : InactiveCardBG,
+                        ? kActiveCardBG
+                        : kInactiveCardBG,
                     childWidget: Gender(
                       icon: FontAwesomeIcons.mars,
-                      text: 'Male',
+                      text: 'MALE',
                     ),
                   ),
                 ),
@@ -55,11 +55,11 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     bgColor: selectedGender == GenderTypes.female
-                        ? ActiveCardBG
-                        : InactiveCardBG,
+                        ? kActiveCardBG
+                        : kInactiveCardBG,
                     childWidget: Gender(
                       icon: FontAwesomeIcons.venus,
-                      text: 'Female',
+                      text: 'FEMALE',
                     ),
                   ),
                 ),
@@ -68,21 +68,39 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: MyCard(
-              bgColor: ActiveCardBG,
+              bgColor: kActiveCardBG,
               childWidget: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    '${Height}',
-                    style: TextStyle(fontSize: 80),
+                    'HEIGHT',
+                    style: kLabelTextStyle,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        height.toString(),
+                        style: kValueTextStyle,
+                      ),
+                      Text(
+                        'cm',
+                        style: kLabelTextStyle,
+                      )
+                    ],
                   ),
                   Slider(
-                    value: .5,
-                    activeColor: BottomBarColor,
-                    inactiveColor: Color(0xFF0A0E21),
+                    value: height.toDouble(),
+                    min: 120,
+                    max: 220,
+                    activeColor: kBottomBarColor,
+                    inactiveColor: Color(0xFF8D8E98),
                     onChanged: (double newValue) {
                       setState(
                         () {
-                          Height = newValue.round();
+                          height = newValue.round();
                         },
                       );
                     },
@@ -96,13 +114,13 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: MyCard(
-                    bgColor: ActiveCardBG,
+                    bgColor: kActiveCardBG,
                     childWidget: Text('hh'),
                   ),
                 ),
                 Expanded(
                   child: MyCard(
-                    bgColor: ActiveCardBG,
+                    bgColor: kActiveCardBG,
                     childWidget: Text('hh'),
                   ),
                 ),
@@ -112,7 +130,7 @@ class _InputPageState extends State<InputPage> {
           Container(
             height: 80,
             width: double.infinity,
-            color: BottomBarColor,
+            color: kBottomBarColor,
           ),
         ],
       ),
