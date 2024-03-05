@@ -10,6 +10,7 @@ enum GenderTypes { male, female }
 
 int height = 180;
 int weight = 70;
+int age = 19;
 
 class InputPage extends StatefulWidget {
   const InputPage({super.key});
@@ -169,7 +170,43 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: MyCard(
                     bgColor: kActiveCardBG,
-                    childWidget: Text('hh'),
+                    childWidget: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'AGE',
+                          style: kLabelTextStyle,
+                        ),
+                        Text(
+                          age.toString(),
+                          style: kValueTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  age--;
+                                });
+                              },
+                            ),
+                            SizedBox(
+                              width: 20,
+                            ),
+                            RoundIconButton(
+                              icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  age++;
+                                });
+                              },
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ],
