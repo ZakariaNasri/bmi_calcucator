@@ -225,7 +225,7 @@ class _InputPageState extends State<InputPage> {
               child: Center(
                 child: Text(
                   'Calculate',
-                  style: kValueTextStyle,
+                  style: kResultButtonStyle,
                 ),
               ),
             ),
