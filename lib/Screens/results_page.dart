@@ -42,7 +42,7 @@ class ResultsPage extends StatelessWidget {
                     style: kValueTextStyle,
                   ),
                   Text(
-                    'lets take a new step by adding a new program to your daily meals , lest goo',
+                    'try-lets take a new step by adding a new program to your daily meals , lest goo',
                     textAlign: TextAlign.center,
                   )
                 ],
