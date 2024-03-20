@@ -39,7 +39,7 @@ class ResultsPage extends StatelessWidget {
                   ),
                   Text(
                     '29.6',
-                    style: kValueTextStyle,
+                    style: kFinalResultTxtStl,
                   ),
                   Text(
                     'try-lets take a new step by adding a new program to your daily meals , lest goo',
