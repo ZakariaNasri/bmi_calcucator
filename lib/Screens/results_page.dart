@@ -5,7 +5,14 @@ import '../Components/constants.dart';
 import '../Components/bottom_button.dart';
 
 class ResultsPage extends StatelessWidget {
-  const ResultsPage({super.key});
+  ResultsPage(
+      {required this.textResult,
+      required this.bmi,
+      required this.interpretation});
+
+  final String textResult;
+  final String bmi;
+  final String interpretation;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,16 +40,19 @@ class ResultsPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    'OVERWHEIGHT',
+                    textResult,
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '29.6',
+                    bmi,
                     style: kFinalResultTxtStl,
                   ),
-                  Text(
-                    'try-lets take a new step by adding a new program to your daily meals , lest goo',
-                    textAlign: TextAlign.center,
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      interpretation,
+                      textAlign: TextAlign.center,
+                    ),
                   )
                 ],
               ),

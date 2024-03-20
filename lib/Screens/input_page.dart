@@ -6,6 +6,7 @@ import '../Components/icon_content.dart';
 import '../Components/reusable_card.dart';
 import '../Components/constants.dart';
 import '../Components/bottom_button.dart';
+import '../calculator_brain.dart';
 
 enum GenderTypes { male, female }
 
@@ -99,7 +100,7 @@ class _InputPageState extends State<InputPage> {
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                         overlayColor: Color(0x29EB1555),
-                        thumbColor: Color(0x2FFEB1555),
+                        thumbColor: Color(0x2FFbeef9e),
                         thumbShape:
                             RoundSliderThumbShape(enabledThumbRadius: 16),
                         activeTrackColor: Colors.white,
@@ -216,8 +217,14 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
             text: 'CALCULATE',
             onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(weight: weight, height: height);
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return ResultsPage();
+                return ResultsPage(
+                  textResult: calc.getResult(),
+                  bmi: calc.calculateBmi(),
+                  interpretation: calc.getInterpretation(),
+                );
               }));
             },
           ),
