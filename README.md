@@ -1,10 +1,6 @@
 # BMI Calculator App
 
 This Flutter app calculates the Body Mass Index (BMI) based on user input for height and weight. It provides a quick assessment of an individual's overall health based on their BMI.
-## ScreenShots
-<img src="https://github.com/ZakariaNasri/bmi_calcucator/assets/129872644/84207b23-8e4f-46f0-80d5-4c884eede2c7" alt="Zakaria Nasri GIF" width="200">
-<img src="https://github.com/ZakariaNasri/bmi_calcucator/assets/129872644/f228bc27-b1cf-47b0-8a23-0d9bec0a039d" alt="Zakaria Nasri GIF" width="200">
-<img src="https://github.com/ZakariaNasri/bmi_calcucator/assets/129872644/5136cac0-8a09-444e-8adc-036bae5eaa94" alt="Zakaria Nasri GIF" width="200">
 
 ## Features
 
@@ -34,4 +30,7 @@ This Flutter app calculates the Body Mass Index (BMI) based on user input for he
 
 ## Screenshots
 
-Not yet XD
+<img src="https://github.com/ZakariaNasri/bmi_calcucator/assets/129872644/84207b23-8e4f-46f0-80d5-4c884eede2c7" alt="Zakaria Nasri GIF" width="200">
+<img src="https://github.com/ZakariaNasri/bmi_calcucator/assets/129872644/f228bc27-b1cf-47b0-8a23-0d9bec0a039d" alt="Zakaria Nasri GIF" width="200">
+<img src="https://github.com/ZakariaNasri/bmi_calcucator/assets/129872644/5136cac0-8a09-444e-8adc-036bae5eaa94" alt="Zakaria Nasri GIF" width="200">
+
